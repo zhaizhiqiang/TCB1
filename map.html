@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>map</title>
+</head>
+<body>
+	<script type="text/javascript">
+	// 对象：  key：value ， 无序的集合,不管对象中属性原来是什么数据类型，都会被转化为字符串
+
+	//map :    key : value  ,无序的集合，这个集合的key会保留之前数据类型（key可以使任何数据类型）
+	属性 ： size 
+	方法： 1. set() 是为map对象添加键值对的
+		   2. get()  获取制定key的value值
+		   3. delete() 删除指定key的value值
+		   4.has() 判断map集合中是否存在指定的key
+		   5.clear()  清除map集合中所有的键值对
+		   6.keys()  获取所有的key
+		   7. values()  获取所有的value
+		   8. entries() 可以获取集合中所有的key 和value
+		   9.forEach()  遍历集合
+
+
+	// let a = {x:1}, b = {y:2}, c = {};
+	// alert(a)   //[object Object]
+	// c[a] = 8;  //c['object Object'] = 8;
+	// c[b] = 9;	//c['object Object'] = 9;
+	// console.log(c);
+
+
+	// let map = new Map([
+	// 	[3,3],
+	// 	['3',4],
+	// 	[[],5],
+	// 	[[],6],
+	// 	[3,7]
+	// 	])
+	// console.log(map.size);
+
+
+	const map = new Map();
+	map.set(1,"a").set(1,"a").set(2,"b").set(3,"c").set(4,"d");
+	map.get(2);
+	map.delete(2);//返回true  说明删除成功
+	map.delete(6); //返回flase  说明删除失败
+	console.log(map.has(2));
+	// map.clear();
+	console.log(map);
+
+	console.log(map.keys());
+	for(let i of map.keys()){
+		console.log(i)
+	}
+	for(let i of map.values()){
+		console.log(i)
+	}
+	for(let [key,value] of map.entries()) {
+		console.log(key,value)
+	}
+	map.forEach(function(value,key,map){
+		console.log(key,value)
+	})
+
+	</script>
+</body>
+</html>
